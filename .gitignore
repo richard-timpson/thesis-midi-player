@@ -1,0 +1,6 @@
+server/env
+server/keys.py
+server/artifacts/
+server/__pycache__
+
+__pycache___

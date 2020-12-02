@@ -1,0 +1,33 @@
+.ExperimentPerformances {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  
+    width: 25vw;
+    margin: 0 auto;
+  
+    > h4 {
+      margin-bottom: 24px;
+    }
+  
+    .input {
+      margin-bottom: 24px;
+    }
+  
+    .button {
+      margin-bottom:24px;
+    }
+  
+    .midiItem {
+      margin-bottom: 24px;
+    }
+  
+    .progress {
+      width: 100%;
+  
+      .progressBar {
+        margin: 0 auto;
+      }
+    }
+  
+  }
