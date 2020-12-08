@@ -3,4 +3,10 @@ server/keys.py
 server/artifacts/
 server/__pycache__
 
+
 __pycache___
+.eslintcache
+**/.eslintcache
+client/.eslintcache
+client/.eslintcache
+client/.nvmrc
