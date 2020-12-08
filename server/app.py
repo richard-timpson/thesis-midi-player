@@ -94,4 +94,4 @@ def get_midi_files_from_artifact(folder):
     return mid_files
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=80)

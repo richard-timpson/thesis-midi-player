@@ -1,21 +1,21 @@
 FROM node:12.20.0
 
-RUN apt-get update -y && \ 
-    apt-get install python3-pip -y 
-
+COPY /client /client 
 WORKDIR /client 
-COPY . /client
+RUN ls
 RUN yarn 
 RUN yarn build 
 
-WORKDIR /server 
+FROM python:3
+
+COPY /server /server
+
+WORKDIR /server
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
-COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt 
 
-EXPOSE 5000
+COPY --from=0 /client/build /client/build
 
-COPY . /server
-
+EXPOSE 80
 CMD ["python3", "app.py"]
