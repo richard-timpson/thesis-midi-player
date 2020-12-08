@@ -1,18 +1,23 @@
-import React, { useState }  from 'react';
+import React, { useCallback, useEffect, useState }  from 'react';
 
 import 'html-midi-player';
 import styles from './App.module.scss'
-import { Button, Typography } from '@material-ui/core';
+import { Button, CircularProgress, Typography } from '@material-ui/core';
 import ExperimentPerformances from './components/ExperimentPerformances/ExperimentPerformances';
+import ComparisonPerformances from './components/ComparisonPerformances/ComparisonPerformances';
+import { ComparisonMidiFilesResponse, getComparisonMidiFiles } from './api.service';
 
 
 function App() {
   const [numExperiments, setNumExperiments] = useState(1);
+  const [isLoadingComparisonPers, setIsLoadingComparisonPerfs] = useState(true);
+  const [comparisonPerfs, setComparisonPerfs] = useState<ComparisonMidiFilesResponse | null>(null);
+  const [comparisonPersError, setComparisonPerfsError] = useState(false);
 
   const experiments = () => {
     const exps = []
     for (let i = 0; i < numExperiments; i++) {
-      exps.push(<ExperimentPerformances />)
+      exps.push(<ExperimentPerformances key={i}/>)
     }
     return exps
   }
@@ -25,6 +30,8 @@ function App() {
     if (numExperiments > 0)
       setNumExperiments(numExperiments - 1);
   }
+
+  
 
   return (
     <div className={styles.App}>
@@ -43,6 +50,8 @@ function App() {
         <div className={styles.performances}>
           {experiments()}
         </div>
+
+        <ComparisonPerformances />
       </div>
     </div>
   );
