@@ -7,6 +7,7 @@ import shutil
 import os 
 
 app = Flask(__name__, static_folder='../client/build', static_url_path='/')
+port = int(os.environ.get("PORT", 5000))
 CORS(app)
 
 @app.route('/')
@@ -94,4 +95,4 @@ def get_midi_files_from_artifact(folder):
     return mid_files
 
 if __name__ == '__main__':
-    app.run(port=80)
+    app.run(port=port, host='0.0.0.0')

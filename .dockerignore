@@ -1,0 +1,4 @@
+server/env
+server/artifacts
+client/build
+client/node_modules
