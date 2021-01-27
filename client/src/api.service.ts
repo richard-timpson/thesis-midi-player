@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const baseUrl = 'http://localhost:5000';
+// export const baseUrl = 'https://safe-woodland-20570.herokuapp.com';
 
 type Response<T> = {
     error: boolean,

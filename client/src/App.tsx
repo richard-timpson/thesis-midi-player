@@ -6,6 +6,7 @@ import { Button, CircularProgress, Typography } from '@material-ui/core';
 import ExperimentPerformances from './components/ExperimentPerformances/ExperimentPerformances';
 import ComparisonPerformances from './components/ComparisonPerformances/ComparisonPerformances';
 import { ComparisonMidiFilesResponse, getComparisonMidiFiles } from './api.service';
+import TimidityPlayer from './components/Timidity/Timidity';
 
 
 function App() {
@@ -36,6 +37,10 @@ function App() {
   return (
     <div className={styles.App}>
       <div className={styles.container}>
+        {/* <Typography variant="h4">
+          Timidity Test
+        </Typography>
+        <TimidityPlayer /> */}
         <Typography variant="h4">
           Click the buttons below to add or remove an experiment
         </Typography>

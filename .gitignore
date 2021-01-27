@@ -10,3 +10,5 @@ __pycache___
 client/.eslintcache
 client/.eslintcache
 client/.nvmrc
+
+.vscode
